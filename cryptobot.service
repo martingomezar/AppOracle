@@ -1,0 +1,15 @@
+[Unit]
+Description=Bot de Trading de Memecoins (PPO + Binance Testnet)
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/bot_crypto
+ExecStart=/home/ubuntu/bot_crypto/venv/bin/python /home/ubuntu/bot_crypto/bot_manager.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/ubuntu/bot_crypto/bot_stdout.log
+StandardError=append:/home/ubuntu/bot_crypto/bot_stderr.log
+
+[Install]
+WantedBy=multi-user.target

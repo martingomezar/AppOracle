@@ -1,0 +1,13 @@
+[DAEMON] Bot iniciado en modo continuo 24/7 con actualización diaria a las 00:00.
+
+================ [CICLO MONITOREO: 2026-09-08 22:52:41.030361] ================
+Saldo Libre USDT: 93869.99 | Cartera Total: 93869.99 USDT
+==================================================
+Traceback (most recent call last):
+  File "C:\Users\magak\OneDrive\App 2\bot_manager.py", line 191, in <module>
+    main_daemon()
+    ~~~~~~~~~~~^^
+  File "C:\Users\magak\OneDrive\App 2\bot_manager.py", line 188, in main_daemon
+    time.sleep(60)
+    ~~~~~~~~~~^^^^
+KeyboardInterrupt
