@@ -1,20 +1,21 @@
 # exchange_api.py
 import ccxt
-import os
 import time
 import pandas as pd
 import config
 
-class BinanceAPI:
+class BybitAPI:
     def __init__(self, sandbox=None):
         sandbox_mode = config.USE_SANDBOX if sandbox is None else sandbox
+        
         exchange_config = {
-            'apiKey': config.BINANCE_API_KEY,
-            'secret': config.BINANCE_API_SECRET,
+            'apiKey': config.BYBIT_API_KEY,
+            'secret': config.BYBIT_API_SECRET,
             'enableRateLimit': True,
             'options': {'defaultType': 'spot'}
         }
-        self.exchange = ccxt.binance(exchange_config)
+
+        self.exchange = ccxt.bybit(exchange_config)
         self.exchange.set_sandbox_mode(sandbox_mode)
 
     def fetch_ohlcv_data(self, symbols, timeframe='1m', limit=200):
@@ -49,7 +50,7 @@ class BinanceAPI:
                 
                 if len(df) > 0:
                     dfs[symbol] = df
-            except Exception:
+            except Exception as e:
                 pass
                 
         return dfs, current_prices
