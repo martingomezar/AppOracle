@@ -1,8 +1,8 @@
 # config.py
 # Configuración general para el Bot de Trading con PPO en Bybit Testnet
 
-BYBIT_API_KEY = "tu_api_key_de_bybit"
-BYBIT_API_SECRET = "tu_api_secret_de_bybit"
+BYBIT_API_KEY = "Ta4k6Wbd6GUkfTFe3Z"
+BYBIT_API_SECRET = "PNbvhjR1elyyEv9iveWqv2Zp9GQ3HEcHduLm"
 
 # Configuración del entorno de pruebas
 USE_SANDBOX = True
@@ -14,9 +14,15 @@ SYMBOLS = [
     'SHIB/USDT', 'NEAR/USDT', 'RENDER/USDT', 'FET/USDT', 'INJ/USDT'
 ]
 
-# Aliases de compatibilidad para pipelines existentes
+# Aliases de compatibilidad y parámetros de operación y riesgo
 MEMECOINS = SYMBOLS
 TRADE_LOG_FILE = 'trades_log.csv'
+TRADE_AMOUNT_USDT = 10.0
+STOP_LOSS_PCT = 0.025
+TAKE_PROFIT_PCT = 0.05
+TRAILING_ACTIVATION = 0.015
+TRAILING_STOP_PCT = 0.0075
+TRAILING_DISTANCE = 0.0075  # Distancia de trailing stop requerida por el pipeline
 
 # Parámetros del modelo y trading
 TIMEFRAME = '1m'
